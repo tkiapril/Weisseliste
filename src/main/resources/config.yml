@@ -7,12 +7,19 @@ db:
   uuidfield:
     name: blog
     length: 250
+  deniedfield:
+    name: denied
 log_on_kick: true  # leave a log when kicking not whitelisted user.
+log_on_denial: true  # leave a log when kicking denied user.
 log_on_accept: true  # leave a log when a user is accepted to log on.
 messages:
   # kick_log: log to leave when kicking not whitelisted user.
   kick_log: ${USERNAME} does not exist on the whitelist; Refusing connection.
+  # denial_log: log to leave when kicking denied user.
+  denial_log: ${USERNAME} has not yet activated his/her account; Refusing connection.
   # accept_log: log to leave when accepting whitelisted user.
   accept_log: ${USERNAME} is on whitelist; accepting connection.
   # kick_message: message to show to person who was kicked.
   kick_message: You are not registered; Please try again after registration.
+  # denial_message: message to show to person who was denied.
+  denial_message: You are not activated yet; Please activate your account. (Check your e-mail inbox!)
