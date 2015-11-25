@@ -1,0 +1,15 @@
+db:
+  url: jdbc:mysql://localhost/database_name  # database url
+  driver: com.mysql.jdbc.Driver  # database driver; leave it as is if using mysql.
+  user: username  # database username
+  password: password  # database password
+  tablename: bbs_member
+  uuidfield:
+    name: blog
+    length: 250
+log_on_kick: true  # leave a log when kicking not whitelisted user.
+messages:
+  # kick_log: log to leave when kicking not whitelisted user.
+  kick_log: ${USERNAME} does not exist on the whitelist; Refusing connection.
+  # kick_message: message to show to person who was kicked.
+  kick_message: You are not registered; Please try again after registration.

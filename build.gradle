@@ -1,0 +1,43 @@
+group 'org.tkism.spigot.plugin'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'Bukkit'
+        url 'http://repo.bukkit.org/content/groups/public'
+    }
+}
+
+dependencies {
+    compile group: 'org.bukkit', name: 'bukkit', version: '1.7.9-R0.2'
+    // Exposed
+    compile 'com.h2database:h2:1.4.186'
+    compile 'joda-time:joda-time:2.5'
+    compile 'log4j:log4j:1.2.17'
+    compile 'mysql:mysql-connector-java:5.1.22'
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'org.slf4j:slf4j-log4j12:1.7.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    testCompile group: 'junit', name: 'junit', version: '4.8.2'
+}
+
+buildscript {
+    ext.kotlin_version = '1.0.0-beta-2423'
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.2'
+    }
+}
+
+sourceSets {
+    main.java.srcDir 'src/main/kotlin'
+}

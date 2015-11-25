@@ -1,0 +1,3 @@
+name: Weisseliste
+main: org.tkism.spigot.plugin.weisseliste.Weisseliste
+version: 1.0-SNAPSHOT
