@@ -36,5 +36,9 @@ class WeisselisteListener(instance: Weisseliste, dbInstance: Database) : Listene
                 plugin.log(plugin.config.getString("messages.kick_log").replace("\${USERNAME}", "${event.player.name}"))
             event.disallow(PlayerLoginEvent.Result.KICK_WHITELIST, plugin.config.getString("messages.kick_message"))
         }
+        else {
+            if (plugin.config.getBoolean("log_on_accept"))
+                plugin.log(plugin.config.getString("messages.accept_log").replace("\${USERNAME}", "${event.player.name}"))
+        }
     }
 }

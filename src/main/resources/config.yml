@@ -8,8 +8,11 @@ db:
     name: blog
     length: 250
 log_on_kick: true  # leave a log when kicking not whitelisted user.
+log_on_accept: true  # leave a log when a user is accepted to log on.
 messages:
   # kick_log: log to leave when kicking not whitelisted user.
   kick_log: ${USERNAME} does not exist on the whitelist; Refusing connection.
+  # accept_log: log to leave when accepting whitelisted user.
+  accept_log: ${USERNAME} is on whitelist; accepting connection.
   # kick_message: message to show to person who was kicked.
   kick_message: You are not registered; Please try again after registration.
