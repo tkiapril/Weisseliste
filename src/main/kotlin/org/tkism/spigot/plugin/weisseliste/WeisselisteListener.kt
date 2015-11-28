@@ -9,9 +9,9 @@ import kotlin.sql.*
 /**
  * Created by Tki on 11/25/2015.
  */
-class WeisselisteListener(instance: Weisseliste, dbInstance: Database) : Listener {
-    init { instance.server.pluginManager.registerEvents(this, instance) }
-    val plugin = instance
+class WeisselisteListener(pluginInstance: Weisseliste, dbInstance: Database) : Listener {
+    init { pluginInstance.server.pluginManager.registerEvents(this, pluginInstance) }
+    val plugin = pluginInstance
     val db = dbInstance
     val WhitelistedUsers = WhitelistedUsersTable(
             plugin.config.getString("db.tablename"),
@@ -54,7 +54,6 @@ class WeisselisteListener(instance: Weisseliste, dbInstance: Database) : Listene
                         plugin.config.getString("messages.kick_message").replace("\${USERNAME}", "${event.player.name}")
                 )
             }
-
         }
         else {
             if (plugin.config.getBoolean("log_on_accept"))
